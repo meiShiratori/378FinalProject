@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://btli5txh0a03a"]
+[gd_scene load_steps=2 format=3 uid="uid://btli5txh0a03a"]
+
+[ext_resource type="Texture2D" uid="uid://cucpv63ot00oi" path="res://idle.png" id="1_a7pab"]
 
 [node name="game" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(351, 254)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D"]
+polygon = PackedVector2Array(-13, -14, -13, 0, -3, 1, -6, 6, -6, 14, -1, 20, -4, 24, 0, 28, 4, 24, 1, 21, 6, 15, 6, 6, 2, 2, 12, 1, 13, -14)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_a7pab")
+hframes = 6
