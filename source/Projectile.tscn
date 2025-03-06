@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://nnje7ddt8lmp"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_h3qpy"]
+[ext_resource type="Texture2D" uid="uid://dv60xeuk1ulsh" path="res://images/fireBall.png" id="2_lqdk8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ylrot"]
+radius = 9.0
+height = 24.0
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_h3qpy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_lqdk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_ylrot")
+
+[node name="Timer" type="Timer" parent="."]
